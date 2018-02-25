@@ -17,13 +17,15 @@ Brian Martinez / February 26, 2018
 ## Technology
 	- link to API intend to use.
     - link to the NPM package intend to use.
-    - Technology intend to use
+    - Possibly would like to explore different templating engines. 
+    - features features features if time and developer sanity/skill up to par
 
 ## Timeline
-    - A **timeline** laying out what going to do each day. This should specify clear features to be implemented by the end of each day.
+	- Saturday - Update proposal, update erd, research api's, 
+   
 
 ## Obstacles
-	- Foreseen challenges or obstacles
+	- Working with api's and getting to extra features if time allows.
 
 ## Links and Resources   
 ![imagename](./assets/lucidChart.png)
