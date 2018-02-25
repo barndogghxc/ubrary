@@ -26,7 +26,7 @@ Brian Martinez / February 26, 2018
 	- Foreseen challenges or obstacles
 
 ## Links and Resources   
-![imagename](./assets/lucidchart.png)
+![imagename](./assets/lucidChart.png)
 https://www.lucidchart.com/
 
 https://github.com/barndogghxc/ubrary
