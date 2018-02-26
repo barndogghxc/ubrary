@@ -26,27 +26,23 @@ Brian Martinez / February 26, 2018
     - [User stories](http://www.mariaemerson.com/user-stories/) that describe how your app will be used.
 
 ## Technology
-	- Goodreads API 
-	  The Goodreads API allows developers access to Goodreads data in order to help websites or applications that deal with books be more personalized, social, and engaging. The API can be used in many ways, including:
-
 	  https://www.goodreads.com/api/
-
+	- Goodreads API 
+	  Allows developers access to Goodreads data in order to help websites or applications that deal with books be more personalized, social, and engaging. 
+	  ![imagename](./assets/goodreads.png)
+	  https://github.com/mishoo/UglifyJS/
 	- UglifyJS – a JavaScript parser/compressor/beautifier
-
-	  On the web, performance is everything. The more performance we can squeeze out, the faster our websites and apps are going to be. Saving even a little bit of space and load-times can have a huge impact on your overall business performance, giants like Google have long talked about shaving off as much trim as possible, as even a millisecond of performance increase can mean more business. UglifyJS2 trims and minifies your JavaScript files for you automatically. It’s flexible, easy to use, and helps you to gain those performance margins that you seek.
-      
-      https://github.com/mishoo/UglifyJS/
-
+	  UglifyJS2 trims and minifies your JavaScript files for you automatically. 
+	  ![imagename](./assets/uglify.png)
     - Possibly would like to explore different templating engines. 
     - features features features if time and developer sanity/skill up to par
 
 ## Extras
 	- Save data from a Good Reads API into my database
 	- Include sign up/log in functionality**, with encrypted passwords & authorization with bcrypt
-	- Hit additional models, 
+	- Hit additional models. (Books in Genre Tables)
 	- Hit more external API's (Amazon, Google Maps)
 	- Explore additional NPM packages
-	- Be able to put books into Genre tables
 	- Python Document Cluster that I will get to when I'm a competent developer
 
 ## Timeline
@@ -58,7 +54,7 @@ Brian Martinez / February 26, 2018
     _ Thursday - CODE
     _ Friday - CODE
     _ Saturday - FRANTICALLY CODE/Life
-    _ Sinday - FRANTICALLY CODELife
+    _ Sinday - FRANTICALLY CODE/Life
     _ Monday - FRANTICALLY CODE until Presentation!
 
 ## Obstacles
