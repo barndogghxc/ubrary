@@ -26,16 +26,17 @@ Brian Martinez / February 26, 2018
     - [User stories](http://www.mariaemerson.com/user-stories/) that describe how your app will be used.
 
 ## Technology
+
 	  https://www.goodreads.com/api/
-	- Goodreads API 
+	Goodreads API 
 	  Allows developers access to Goodreads data in order to help websites or applications that deal with books be more personalized, social, and engaging. 
 	  ![imagename](./assets/goodreads.png)
 	  https://github.com/mishoo/UglifyJS/
-	- UglifyJS – a JavaScript parser/compressor/beautifier
+	UglifyJS – a JavaScript parser/compressor/beautifier
 	  UglifyJS2 trims and minifies your JavaScript files for you automatically. 
 	  ![imagename](./assets/uglify.png)
-    - Possibly would like to explore different templating engines. 
-    - features features features if time and developer sanity/skill up to par
+    Possibly would like to explore different templating engines. 
+    features features features if time and developer sanity/skill up to par
 
 ## Extras
 	- Save data from a Good Reads API into my database
