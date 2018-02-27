@@ -3,6 +3,8 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 
 const allRouter = require('./routes/all-router');
+const readRouter = require('./routes/read-router');
+const favRouter = require('./routes/fav-router');
 
 // Logger
 const logger = require('morgan');
@@ -19,6 +21,10 @@ app.get('/', function(req, res){
 
 // Middleware
 app.use('/books', allRouter);
+app.use('/readbooks', readRouter);
+app.use('/favbooks', favRouter);
+
+
 
 // Error Handler
 app.use('*', function(req, res){
