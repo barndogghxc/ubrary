@@ -1,7 +1,7 @@
 
-DROP TABLE IF EXISTS book_db;
+DROP TABLE IF EXISTS books;
 
-CREATE TABLE book_db (
+CREATE TABLE books (
   id SERIAL PRIMARY KEY,
   Title VARCHAR(171) NOT NULL, 
   Author VARCHAR(24) NOT NULL,
@@ -10,4 +10,4 @@ CREATE TABLE book_db (
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-CREATE INDEX ON book_db (author);
+CREATE INDEX ON books (author);

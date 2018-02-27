@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
 
@@ -11,6 +12,10 @@ const logger = require('morgan');
 
 // Init
 const app = express();
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+
 
 // Home
 app.get('/', function(req, res){
