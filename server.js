@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const port = process.env.PORT || 3000;
 
 const allRouter = require('./routes/allBooks');
+const allController = require('../controllers/viewsController');
 // const readRouter = require('./routes/readBooks');
 // const favRouter = require('./routes/favBooks');
+
 
 // Logger
 const logger = require('morgan');
@@ -18,6 +21,9 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(methodOverride('_method'));
 
 
 // Home

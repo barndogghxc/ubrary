@@ -8,46 +8,49 @@ module.exports = {
 			res.locals.books = results
       next()
 		})
-	})
 		.catch(err => {
 			next(err)
 		})
 	},
-
-	create(req, res){
+  create(req, res, next){
 	  allBooksDB.save(req.body)
-	  .then(result => {
-      	res.json({
-          message: 'ok',
-          data: result
-        })
-      })
-      .catch(err => {
-      	res.status(500).json({
-          message: 'Error',
-          error: err
-      	})
-      })
+	  .then(results => {
+      res.locals.book = result
+      next()
+    })
+    .catch(err => {
+      next(err)
+    })
 	},
 
-	getOne(req, res){
+  newBook(req, res, next) {
+    res.locals.newBook = {
+      Title: "",
+      Author: "",
+      Average_Rating: "",
+      Number_of_Pages: ""
+    }
+    next()
+  },
+
+	getOne(req, res, next){
 	  allBooksDB.findOne(req.params.id)
-	  .then(result => {
-        res.json({
-         message: 'ok',
-         data: result
-        })
-      })
-      .catch(err => {
-        res.status(500).json({
-          message: 'error',
-          error: err
-        })
-      })
+	  .then(results => {
+      res.locals.book = result
+      next()
+    })
+    .catch(err => {
+      next(err)
+    })
 	},
 
 	update(req, res){
-	  allBooksDB.update(req.body)
+    console.log(Object.assign(req.body, {
+      id: req.params.id
+    }))
+	  allBooksDB.update(Object.assign(req.body, {
+      id: req.params.id
+    }))
 	  .then(result => {
         res.json({
           message: 'ok',
@@ -55,6 +58,7 @@ module.exports = {
         })
       })
       .catch(err => {
+        console.log(err)
         res.status(500).json({
           message: 'error',
           error: err
