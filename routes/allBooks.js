@@ -1,20 +1,10 @@
 const express = require('express');
 const allRouter = express.Router();
 const allController = require('../controllers/allController');
-allRouter.get('/', function(req, res) {
-	res.send(' All books index');
-});
-allRouter.post('/', function(req, res) {
-+	res.send(' book create');
-});
-allRouter.get('/:id', function(req, res) {
-	res.send(' get book id ' + req.params.id);
-});
-allRouter.put('/:id', function(req, res) {
-	res.send(' update book id ' + req.params.id);
-});
-allRouter.delete('/:id', function(req, res) {
-	res.send(' delete book id ' + req.params.id);
-});
+allRouter.get('/', allController.index);
+allRouter.post('/', allController.create);
+allRouter.get('/:id', allController.getOne);
+allRouter.put('/:id', allController.update);
+allRouter.delete('/:id', allController.delete);
 
-module.exports = allRouter
+module.exports = allRouter;

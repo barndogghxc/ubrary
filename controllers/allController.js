@@ -18,18 +18,65 @@ module.exports = {
 	},
 
 	create(req, res){
-		allBooksDB.save
-	}
+	  allBooksDB.save(req.body)
+	  .then(result => {
+      	res.json({
+          message: 'ok',
+          data: result
+        })
+      })
+      .catch(err => {
+      	res.status(500).json({
+          message: 'Error',
+          error: err
+      	})
+      })
+	},
 
 	getOne(req, res){
-		allBooksDB.findOne
-	}
+	  allBooksDB.findOne(req.params.id)
+	  .then(result => {
+        res.json({
+         message: 'ok',
+         data: result
+        })
+      })
+      .catch(err => {
+        res.status(500).json({
+          message: 'error',
+          error: err
+        })
+      })
+	},
 
 	update(req, res){
-		allBooksDB.update
-	}
+	  allBooksDB.update(req.body)
+	  .then(result => {
+        res.json({
+          message: 'ok',
+          data: result
+        })
+      })
+      .catch(err => {
+        res.status(500).json({
+          message: 'error',
+          error: err
+        })
+      })
+	},
 
 	delete(req, res){
-		allBooksDB.destroy
+      allBooksDB.destroy
+      .then(() => {
+        res.json({
+          message: 'ok'
+        })
+      })
+      .catch(err => {
+        res.status(500).json({
+          message: 'error',
+          error: err
+        })
+      })
 	}
-} 
+}; 

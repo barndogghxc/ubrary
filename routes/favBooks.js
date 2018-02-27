@@ -1,19 +1,10 @@
 const express = require('express');
 const favRouter = express.Router();
-favRouter.get('/', function(req, res) {
-	res.send(' Favorite books index');
-});
-favRouter.post('/', function(req, res) {
-+	res.send(' book create');
-});
-favRouter.get('/:id', function(req, res) {
-	res.send(' get book id ' + req.params.id);
-});
-favRouter.put('/:id', function(req, res) {
-	res.send(' update book id ' + req.params.id);
-});
-favRouter.delete('/:id', function(req, res) {
-	res.send(' delete book id ' + req.params.id);
-});
+const favController = require('../controllers/favController');
+favRouter.get('/', favController.index);
+favRouter.post('/', favController.create);
+favRouter.get('/:id', favController.getOne);
+favRouter.put('/:id', favController.update);
+favRouter.delete('/:id', favController.delete);
 
 module.exports = favRouter
