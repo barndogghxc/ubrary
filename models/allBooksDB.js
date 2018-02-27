@@ -3,7 +3,8 @@ const dbConfig = require('../config/dbConfig');
 const db = pgp(dbConfig)
 module.exports = {
 	findAll () {
-		return db.any('SELECT * FROM books');
+		console.log('inside of model findAll')
+		return db.any('SELECT * FROM books;');
 	},
 	findOne (id) {
 		return db.any('SELECT * FROM books WHERE id=$1', id)

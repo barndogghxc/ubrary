@@ -2,6 +2,7 @@ const allBooksDB = require('../models/allBooksDB');
 
 module.exports = {
 	index (req, res) {
+    console.log('inside controller index');
 		allBooksDB.findAll()
 		.then(results => {
 			res.json({
