@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 
 const allRouter = require('./routes/allBooks');
-const readRouter = require('./routes/readBooks');
-const favRouter = require('./routes/favBooks');
+// const readRouter = require('./routes/readBooks');
+// const favRouter = require('./routes/favBooks');
 
 // Logger
 const logger = require('morgan');
@@ -16,21 +16,21 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+app.use(express.static('public'));
 app.use(bodyParser.json());
 
 
 // Home
 app.get('/', function(req, res){
 	res.render('index', {
-		title: 'Ubrary',
 		message: `What's shaking welcome to the Ubrary App!`
 	});
 });
 
 // Middleware
 app.use('/books', allRouter);
-app.use('/readbooks', readRouter);
-app.use('/favbooks', favRouter);
+// app.use('/readbooks', readRouter);
+// app.use('/favbooks', favRouter);
 
 
 

@@ -1,0 +1,13 @@
+<% include ../partials/boilerplate.ejs %>
+<h1>There are <%= books.length %> Books </h1>
+<main>
+  <% books.forEach(book => { %>
+    <section>
+    <h2><%= book.Title %></h2>
+    <h3>- <%= book.Author %></h3>
+    <p><%= book.Average_Rating %></p>
+    <p><%= book.Number_of_Pages %></p>
+    </section>
+  <% }) %>
+</main>
+<% include ../partials/footer.ejs %>

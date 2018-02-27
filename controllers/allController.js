@@ -1,20 +1,16 @@
 const allBooksDB = require('../models/allBooksDB');
 
 module.exports = {
-	index (req, res) {
+	index (req, res, next) {
     console.log('inside controller index');
 		allBooksDB.findAll()
 		.then(results => {
-			res.json({
-				message: 'ok',
-				data: results
-			})
+			res.locals.books = results
+      next()
 		})
+	})
 		.catch(err => {
-			res.status(500).json({
-				message: 'error',
-				error: err
-			})
+			next(err)
 		})
 	},
 
