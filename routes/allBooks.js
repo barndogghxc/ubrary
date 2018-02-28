@@ -1,6 +1,7 @@
 const express = require('express');
 const allRouter = express.Router();
 const allController = require('../controllers/allController');
+const viewsController = require('../controllers/viewsController');
 allRouter.get('/', allController.index, viewsController.showBooks);
 allRouter.post('/', allController.create, viewsController.redirectToBook);
 allRouter.get('/:new', allController.newBook, viewsController.newBook);

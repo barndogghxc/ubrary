@@ -1,30 +1,33 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const path = require('path');
+const logger = require('morgan');
 const methodOverride = require('method-override');
-
-const port = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
 
 const allRouter = require('./routes/allBooks');
-const allController = require('../controllers/viewsController');
+const viewsController = require('./controllers/viewsController');
 // const readRouter = require('./routes/readBooks');
 // const favRouter = require('./routes/favBooks');
 
-
-// Logger
-const logger = require('morgan');
+const port = process.env.PORT || 3000;
 
 // Init
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.static('public'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use(methodOverride('_method'));
 
+// Middleware
+app.use('/books', allRouter);
+// app.use('/readbooks', readRouter);
+// app.use('/favbooks', favRouter);
 
 // Home
 app.get('/', function(req, res){
@@ -33,10 +36,7 @@ app.get('/', function(req, res){
 	});
 });
 
-// Middleware
-app.use('/books', allRouter);
-// app.use('/readbooks', readRouter);
-// app.use('/favbooks', favRouter);
+
 
 
 
