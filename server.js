@@ -1,8 +1,8 @@
 const express = require('express');
-const path = require('path');
 const logger = require('morgan');
-const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
 
 const allRouter = require('./routes/allBooks');
 const viewsController = require('./controllers/viewsController');

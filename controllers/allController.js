@@ -4,23 +4,19 @@ module.exports = {
 	index (req, res, next) {
     console.log('inside controller index');
 		allBooksDB.findAll()
-		.then(results => {
-			res.locals.books = results
-      next()
+		.then((books) => {
+			res.locals.books = books;
+      next();
 		})
-		.catch(err => {
-			next(err)
-		})
+		.catch(err => next(err));
 	},
   create(req, res, next){
 	  allBooksDB.save(req.body)
-	  .then(results => {
-      res.locals.book = result
-      next()
+	  .then((book) => {
+      res.locals.book = book;
+      next();
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(err => next(err));
 	},
 
   newBook(req, res, next) {
@@ -35,49 +31,26 @@ module.exports = {
 
 	getOne(req, res, next){
 	  allBooksDB.findOne(req.params.id)
-	  .then(results => {
-      res.locals.book = result
-      next()
+	  .then((book) => {
+      res.locals.book = book;
+      next();
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(err => next(err));
 	},
 
-	update(req, res){
-    console.log(Object.assign(req.body, {
-      id: req.params.id
-    }))
-	  allBooksDB.update(Object.assign(req.body, {
-      id: req.params.id
-    }))
-	  .then(result => {
-        res.json({
-          message: 'ok',
-          data: result
-        })
+	update(req, res, next){
+    console.log(req.body, 'update controller');
+	  allBooksDB.update(req.body)
+	  .then((book) => {
+        res.locals.book = book;
+        next();
       })
-      .catch(err => {
-        console.log(err)
-        res.status(500).json({
-          message: 'error',
-          error: err
-        })
-      })
+      .catch(err => next(err));
 	},
 
-	delete(req, res){
-      allBooksDB.destroy
-      .then(() => {
-        res.json({
-          message: 'ok'
-        })
-      })
-      .catch(err => {
-        res.status(500).json({
-          message: 'error',
-          error: err
-        })
-      })
-	}
+	delete(req, res, next){
+      allBooksDB.delete(req.params.id)
+      .then(() => next())
+      .catch(err => next(err));
+    },
 }; 
