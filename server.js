@@ -10,9 +10,10 @@ const allRouter = require('./routes/allBooks');
 const port = process.env.PORT || 3000;
 // Init
 const app = express();
-
+// Views
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// Logging
 app.use(logger('dev'));
 
 app.use(bodyParser.urlencoded({extended: false,}));

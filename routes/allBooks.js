@@ -6,17 +6,17 @@ const viewsController = require('../controllers/viewsController');
 
 const allRouter = express.Router();
 
-allRouter.get('/:id/edit',  allController.getOne, viewsController.showEditForm);
-allRouter.get('/new',  allController.makeNewBook, viewsController.showAddForm);
+allRouter.get('/:id/edit',  allController.getOne);
+allRouter.get('/new',  allController.makeNewBook);
 
 allRouter.route('/:id')
-  .get(allController.getOne, viewsController.showOne)
-  .put(allController.update, viewsController.handleUpdate)
-  .delete(allController.delete, viewsController.handleDelete);
+  .get(allController.getOne)
+  .put(allController.update)
+  .delete(allController.delete);
 
 allRouter.route('/')
-  .get(allController.index, viewsController.showQuotes)
-  .post(allController.create, viewsController.handleCreate);
+  .get(allController.index)
+  .post(allController.create);
 
 module.exports = allRouter;
 
