@@ -1,18 +1,20 @@
 const allBooksDB = require('../models/allBooksDB');
 
 module.exports = {
+  
   makeNewBook(req, res, next) {
-    res.locals.newBook = {
-      Title: "",
-      Author: "",
-      Average_Rating: "",
-      Number_of_Pages: "",
+    const newBook = {
+      id: null,
+      Title: null,
+      Author: null,
+      Average_Rating: null,
+      Number_of_Pages: null,
     };
-    next()
+    res.locals.book = newBook;
+    next();
   },
 	
   index (req, res, next) {
-    console.log('inside controller index');
 		allBooksDB.findAll()
 		.then((books) => {
 			res.locals.books = books;
@@ -22,7 +24,7 @@ module.exports = {
 	},
     
   getOne(req, res, next){
-    allBooksDB.findOne(req.params.id)
+    allBooksDB.findById(req.params.id)
     .then((book) => {
       res.locals.book = book;
       next();

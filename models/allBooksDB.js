@@ -1,12 +1,11 @@
 const pgp = require('pg-promise')();
 const dbConfig = require('../config/dbConfig');
-const db = pgp(dbConfig)
+const db = pgp(dbConfig);
 module.exports = {
 	findAll () {
-		console.log('inside of model findAll')
-		return db.many('SELECT * FROM books');
+		return db.any('SELECT * FROM books');
 	},
-	findOne (id) {
+	findById (id) {
 		return db.one('SELECT * FROM books WHERE id=$1', id)
 	},
 	save (book) {
@@ -21,7 +20,7 @@ module.exports = {
 		WHERE id=$[id]
 		RETURNING *`, book);
 	},
-	destroy (id) {
+	delete (id) {
 		return db.none('DELETE FROM books WHERE id=$1', id);
 	}
 }; 
