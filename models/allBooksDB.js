@@ -4,7 +4,7 @@ const db = pgp(dbConfig)
 module.exports = {
 	findAll () {
 		console.log('inside of model findAll')
-		return db.any('SELECT * FROM books;');
+		return db.many('SELECT * FROM books');
 	},
 	findOne (id) {
 		return db.one('SELECT * FROM books WHERE id=$1', id)

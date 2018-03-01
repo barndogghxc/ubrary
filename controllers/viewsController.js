@@ -4,7 +4,9 @@ module.exports = {
 	},
 	showBook (req, res) {
 	  console.log(res.locals)
-	  res.render('books/showBook')
+	  res.render('books/showBook', {
+	  	data: res.locals.book,
+	  });
 	},
 	newBook (req, res) {
 	  res.render('books/newBook')
@@ -14,6 +16,9 @@ module.exports = {
 	},
 	editBook (req, res) {
 	  console.log(res.locals.book)
-	  res.render('books/editBook')
+	  res.render('books/editBook', {
+	  	data: res.locals.quote,
+	  });
 	}
 };
+

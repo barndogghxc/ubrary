@@ -1,8 +1,8 @@
 const express = require('express');
+const path = require('path');
 const logger = require('morgan');
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-
+const bodyParser = require('body-parser');
 
 const allRouter = require('./routes/allBooks');
 const viewsController = require('./controllers/viewsController');
@@ -35,10 +35,6 @@ app.get('/', function(req, res){
 		message: `What's shaking welcome to the Ubrary App!`
 	});
 });
-
-
-
-
 
 // Error Handler
 app.use('*', function(req, res){
