@@ -2,11 +2,9 @@
 <h1>There are <%= books.length %> Books </h1>
 <main>
   <% books.forEach(book => { %>
-    <section>
+    <section class='book'>
     <h2><%= book.Title %></h2>
-    <h3>- <%= book.Author %></h3>
-    <p><%= book.Average_Rating %></p>
-    <p><%= book.Number_of_Pages %></p>
+    <a href='/books/<%= book.id%>'>Get More Info!</a>
     </section>
   <% }) %>
 </main>
