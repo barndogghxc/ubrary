@@ -1,4 +1,4 @@
-INSERT INTO books (Title, Author, Average_Rating, Number_of_Pages) VALUES 
+INSERT INTO books (title, author, average_rating, number_of_pages) VALUES 
 ('The John Milton Series: Books 1-3','Mark Dawson',4.06,873),
 ('In the Blink of an Eye','Walter Murch',4.24,148),
 ('Save the Cat!: The Last Book on Screenwriting You''ll Ever Need','Blake Snyder',4.05,191),

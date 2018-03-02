@@ -10,13 +10,13 @@ module.exports = {
 	},
 	save (book) {
 		return db.one(`INSERT INTO books 
-		(Title, Author, Average_Rating, Number_of_Pages) VALUES
-		($[Title], $[Author], $[Average_Rating], $[Number_of_Pages])
+		(title, author, average_Rating, number_of_Pages) VALUES
+		($[title], $[author], $[average_rating], $[number_of_pages])
 		RETURNING *`, book);
 	},
 	update (book) {
 		return db.one(`UPDATE books
-		SET Title=$[Title], Author=$[Author], Average_Rating=$[Average_Rating], Number_of_Pages=$[Number_of_Pages]
+		SET title=$[title], author=$[author], average_rating=$[average_rating], number_of_pages=$[number_of_pages]
 		WHERE id=$[id]
 		RETURNING *`, book);
 	},

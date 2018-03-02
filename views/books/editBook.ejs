@@ -1,11 +1,11 @@
 <% include ../partials/boilerplate %>
 <form method="POST" action="/books/<%= data.id %>?_method=PUT">
   <input name="id" type="hidden" value="<%= data.id %>">
-  <input name="Title" type="text" value="<%= data.Title %>" />
-  <input name="Author" type="text" value="<%= data.Author %>" />
-  <input name="Average_Rating" type="text" value="<%= data.Average_Rating%">
-  <input name="Number_of_Pages" type="text" value="<%= data.Number_of_Pages%">
-  <input type="submit" value="Edit it!" />
+  <input name="title" type="text" value="<%= data.title %>" />
+  <input name="author" type="text" value="<%= data.author %>" />
+  <input name="average_rating" type="text" value="<%= data.average_rating%>"/>
+  <input name="number_of_pages" type="text" value="<%= data.number_of_pages%>"/>
+  <input type="submit" value="Edit this book!" />
 </form>
 
 <% include ../partials/footer %>
