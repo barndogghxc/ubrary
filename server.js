@@ -5,8 +5,8 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 const allRouter = require('./routes/allBooks');
-// const readRouter = require('./routes/readBooks');
-// const favRouter = require('./routes/favBooks');
+const readRouter = require('./routes/readBooks');
+const favRouter = require('./routes/favBooks');
 const port = process.env.PORT || 3000;
 // Init
 const app = express();
