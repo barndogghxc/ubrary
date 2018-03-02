@@ -1,4 +1,6 @@
 const allBooksDB = require('../models/allBooksDB');
+const favBooksDB = require('../models/favBooksDB');
+const redBooksDB = require('../models/redBooksDB');
 
 module.exports = {
   
@@ -56,4 +58,69 @@ module.exports = {
       .then(() => next())
       .catch(err => next(err));
     },
+
+  favIndex (req, res, next) {
+    favBooksDB.findFavs()
+    .then((favs) => {
+      res.locals.favs = favs;
+      next();
+    })
+    .catch(err => next(err));
+  },
+    
+  getOneFav(req, res, next){
+    favBooksDB.findFavId(req.params.id)
+    .then((fav) => {
+      res.locals.fav = fav;
+      next();
+    })
+    .catch(err => next(err));
+  },
+
+  favCreate(req, res, next){
+    favBooksDB.saveFav(req.body)
+    .then((fav) => {
+      res.locals.fav = fav;
+      next();
+    })
+    .catch(err => next(err));
+  },
+
+
+  updateFav(req, res, next){
+    favBooksDB.updateFav(req.body)
+    .then((fav) => {
+        res.locals.fav = fav;
+        next();
+      })
+      .catch(err => next(err));
+  },
+
+  readIndex (req, res, next) {
+    redBooksDB.findAll()
+    .then((reads) => {
+      res.locals.reads = reads;
+      next();
+    })
+    .catch(err => next(err));
+  },
+    
+  getOneRead(req, res, next){
+    redBooksDB.findById(req.params.id)
+    .then((read) => {
+      res.locals.read = read;
+      next();
+    })
+    .catch(err => next(err));
+  },
+
+
+  updateRead(req, res, next){
+    redBooksDB.update(req.body)
+    .then((read) => {
+        res.locals.read = read;
+        next();
+      })
+      .catch(err => next(err));
+  },
 }; 
