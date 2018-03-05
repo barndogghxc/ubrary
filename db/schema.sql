@@ -37,3 +37,14 @@ CREATE TABLE reads (
 );
 
 CREATE INDEX ON reads (author);
+
+DROP TABLE IF EXISTS reads;
+
+CREATE TABLE reviews (
+  id SERIAL PRIMARY KEY,
+  review VARCHAR(2000) NOT NULL, 
+  rating NUMERIC(4,2) NOT NULL,
+  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX ON reads (review);

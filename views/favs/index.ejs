@@ -1,10 +1,10 @@
 <% include ../partials/boilerplate.ejs %>
 <h1>There are <%= favs.length %> Books </h1>
 <main>
-  <% favs.forEach(fave => { %>
-    <section class='fave'>
+  <% favs.forEach(fav => { %>
+    <section class='fav'>
     <h2><%= fave.title %></h2>
-    <a href='/favs/<%= fave.id%>'>Get More Info!</a>
+    <a href='/favs/<%= fav.id%>'>Get More Info!</a>
     </section>
   <% }) %>
 </main>

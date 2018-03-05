@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path');
+const mustacheExpress = require('mustache-express');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
@@ -10,9 +10,13 @@ const favRouter = require('./routes/favBooks');
 const port = process.env.PORT || 3000;
 // Init
 const app = express();
+
 // Views
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+const mustache =mustacheExpress();
+mustache.cache = null;
+app.engine('mustache', mustache);
+app.set('view engine', 'mustache'); 
+
 // Logging
 app.use(logger('dev'));
 
@@ -20,10 +24,13 @@ app.use(bodyParser.urlencoded({extended: false,}));
 app.use(bodyParser.json());
 
 app.use(methodOverride('_method'));
+
+app.use(express.static(path.join(__dirname, 'public'))); 
+
 // Middleware
 app.use('/books', allRouter);
-app.use('/faves', favRouter);
-app.use('/reads', redRouter);
+app.use('/favs', favRouter);
+app.use('/read', redRouter);
 
 // Home
 app.get('/', (req, res) => {

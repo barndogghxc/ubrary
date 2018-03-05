@@ -28,12 +28,12 @@ module.exports = {
 	},
 
 	showFavBooks (req, res) {
-     res.render('favs/favIndex', {
+     res.render('/favs', {
      	data: res.locals.favs,
      });
 	},
 	showOneFav (req, res) {
-	  res.render('faves/showFav', {
+	  res.render('favs/showFav', {
 	  	data: res.locals.fav,
 	  });
 	},
