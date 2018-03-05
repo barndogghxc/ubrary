@@ -1,7 +1,7 @@
 @import 'reset';
 
 body {
-	font-family: heletica, sans-serif;
+	font-family: helvetica, sans-serif;
 }
 
 h1 {
@@ -12,3 +12,6 @@ h1 {
 p {
 	color: black;
 }
+
+@import 'list-page';
+@import 'book-form';

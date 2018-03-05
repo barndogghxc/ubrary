@@ -1,6 +1,7 @@
 const express = require('express');
 
 const mustacheExpress = require('mustache-express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
@@ -19,21 +20,23 @@ app.set('view engine', 'mustache');
 
 app.use(express.static('public')); 
 
+app.use(bodyParser.urlencoded({extended: false }));
+
 app.get('/list', (req, res) => {
 	res.render('list');
 });
-app.get('/favs', (req, res) => {
-	res.render('favs');
+
+app.get('/book-form', (req, res) => {
+	res.render('book-form');
 });
-app.get('/read', (req, res) => {
-	res.render('read');
-});
+
+
 
 // Error Handler
 app.use('*', function(req, res){
 	res.status(404).json('Not Found!');
 });
 
-app.listen(port, function(){
-	console.log(`Server started on port ${port}`);
+app.listen(process.env.PORT,() => {
+	console.log(`Server started on port ${process.env.PORT}`);
 }); 

@@ -46,7 +46,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: heletica, sans-serif; }
+  font-family: helvetica, sans-serif; }
 
 h1 {
   font-size: 2em;
@@ -54,3 +54,9 @@ h1 {
 
 p {
   color: black; }
+
+.list-page h1 {
+  color: purple; }
+
+.book-form h1 {
+  color: orange; }
