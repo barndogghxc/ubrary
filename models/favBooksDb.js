@@ -1,6 +1,4 @@
-const pgp = require('pg-promise')();
-const dbConfig = require('../config/dbConfig');
-const db = pgp(dbConfig);
+const db = require('../db/connection');
 module.exports = {
 	findFavs () {
 		return db.any('SELECT * FROM favs');

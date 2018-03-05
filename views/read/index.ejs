@@ -1,0 +1,12 @@
+<% include ../partials/boilerplate.ejs %>
+<h1>There are <%= read.length %> Books </h1>
+<main>
+  <% read.forEach(read => { %>
+    <section class='read'>
+    <h2><%= read.title %></h2>
+    <a href='/read/<%= read.id%>'>Get More Info!</a>
+
+    </section>
+  <% }) %>
+</main>
+<% include ../partials/footer.ejs %>

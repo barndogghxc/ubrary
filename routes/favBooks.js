@@ -9,11 +9,11 @@ const favRouter = express.Router();
 favRouter.get('/favs/:id/edit',  allController.getOneFav);
 
 
-favRouter.route('/faves/:id')
+favRouter.route('/favs/:id')
   .get(allController.getOneFav)
   .put(allController.updateFav);
 
-favRouter.route('/faves')
+favRouter.route('/favs')
   .get(allController.favIndex)
   .post(allController.favCreate);
 

@@ -28,7 +28,7 @@ module.exports = {
 	},
 
 	showFavBooks (req, res) {
-     res.render('faves/favIndex', {
+     res.render('favs/favIndex', {
      	data: res.locals.favs,
      });
 	},
@@ -38,15 +38,15 @@ module.exports = {
 	  });
 	},
 	showEditFavBook (req, res) {
-	  res.render('faves/editFavBook', {
+	  res.render('favs/editFavBook', {
 	  	data: res.locals.fav,
 	  });
 	},
 	handleFavCreate(req, res) {
-      res.redirect('/faves');
+      res.redirect('/favs');
 	},
 	handleFavUpdate(req, res) {
-	  res.redirect(`/faves/${req.params.id}`);
+	  res.redirect(`/favs/${req.params.id}`);
 	},
 
 	showReadBooks (req, res) {
