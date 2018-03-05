@@ -1,12 +1,10 @@
 const express = require('express');
-const mustacheExpress = require('mustache-express');
-const logger = require('morgan');
-const methodOverride = require('method-override');
-const bodyParser = require('body-parser');
 
-const allRouter = require('./routes/allBooks');
-const redRouter = require('./routes/redBooks');
-const favRouter = require('./routes/favBooks');
+const mustacheExpress = require('mustache-express');
+require('dotenv').config();
+
+
+
 const port = process.env.PORT || 3000;
 // Init
 const app = express();
@@ -17,28 +15,18 @@ mustache.cache = null;
 app.engine('mustache', mustache);
 app.set('view engine', 'mustache'); 
 
-// Logging
-app.use(logger('dev'));
 
-app.use(bodyParser.urlencoded({extended: false,}));
-app.use(bodyParser.json());
 
-app.use(methodOverride('_method'));
+app.use(express.static('public')); 
 
-app.use(express.static(path.join(__dirname, 'public'))); 
-
-// Middleware
-app.use('/books', allRouter);
-app.use('/favs', favRouter);
-app.use('/read', redRouter);
-
-// Home
-app.get('/', (req, res) => {
-	res.render('index', {
-		message:       'Whats Shaking?!',
-    	documentTitle: 'This is Ubrary!!',
-    	subTitle:      'Read the good books first, or you may not have a chance to read them at all. - Henry Thoreau',
-	});
+app.get('/list', (req, res) => {
+	res.render('list');
+});
+app.get('/favs', (req, res) => {
+	res.render('favs');
+});
+app.get('/read', (req, res) => {
+	res.render('read');
 });
 
 // Error Handler
