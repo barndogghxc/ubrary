@@ -1,6 +1,6 @@
 const allBooksDB = require('../models/allBooksDB');
 const favBooksDB = require('../models/favBooksDB');
-const redBooksDB = require('../models/redBooksDB');
+const redBooksDB = require('../models/readBooksDB');
 
 module.exports = {
   

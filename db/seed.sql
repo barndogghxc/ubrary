@@ -402,7 +402,7 @@ INSERT INTO faves (title, author, average_rating, number_of_pages) VALUES
 ('Wuthering Heights','Emily Brontë',3.83,464),
 ('The Hitchhiker''s Guide to the Galaxy (Hitchhiker''s Guide to the Galaxy, #1)','Douglas Adams',4.21,216),
 ('Animal Farm','George Orwell',3.89,122),
-('Harry Potter and the Order of the Phoenix (Harry Potter, #5)','J.K. Rowling',4.47,870);
+('Harry Potter and the Order of the Phoenix (Harry Potter, #5)','J.K. Rowling',4.47,870),
 ('Fargo Rock City: A Heavy Metal Odyssey in Rural North Dakota','Chuck Klosterman',3.79,288),
 ('The Long Hard Road Out of Hell','Marilyn Manson',3.88,275),
 ('Killing Yourself to Live: 85% of a True Story','Chuck Klosterman',3.85,245),

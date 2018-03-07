@@ -4,18 +4,18 @@ const allController = require('../controllers/allController');
 
 const viewsController = require('../controllers/viewsController');
 
-const favRouter = express.Router();
+const allRouter = express.Router();
 
-favRouter.get('/:id/edit',  allController.getOne, viewsController.showEditBook);
-favRouter.get('/new',  allController.makeNewBook, viewsController.showNewBook);
+allRouter.get('/:id/edit',  allController.getOne, viewsController.showEditBook);
+allRouter.get('/new',  allController.makeNewBook, viewsController.showNewBook);
 
-favRouter.route('/:id')
+allRouter.route('/:id')
   .get(allController.getOne, viewsController.showOne)
   .put(allController.update, viewsController.handleUpdate)
   .delete(allController.delete, viewsController.handleDelete);
 
-favRouter.route('/')
+allRouter.route('/')
   .get(allController.index, viewsController.showBooks)
   .post(allController.create, viewsController.handleCreate);
 
-module.exports = favRouter;
+module.exports = allRouter;
