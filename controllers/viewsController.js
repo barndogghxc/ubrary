@@ -27,26 +27,26 @@ module.exports = {
 	  res.redirect('/books');
 	},
 
-	showFavsBooks (req, res) {
-     res.render('favs/index', {
-     	data: res.locals.fav,
-     });
-	},
-	showOneFavs (req, res) {
-	  res.render('favs/showFavs', {
-	  	data: res.locals.fav,
-	  });
-	},
-	showReadBooks (req, res) {
-     res.render('read/index', {
-     	data: res.locals.read,
-     });
-	},
-	showReadOne (req, res) {
-	  res.render('read/showRead', {
-	  	data: res.locals.read,
-	  });
-	},
+	// showFavsBooks (req, res) {
+ //     res.render('favs/index', {
+ //     	data: res.locals.fav,
+ //     });
+	// },
+	// showOneFavs (req, res) {
+	//   res.render('favs/showFavs', {
+	//   	data: res.locals.fav,
+	//   });
+	// },
+	// showReadBooks (req, res) {
+ //     res.render('read/index', {
+ //     	data: res.locals.read,
+ //     });
+	// },
+	// showReadOne (req, res) {
+	//   res.render('read/showRead', {
+	//   	data: res.locals.read,
+	//   });
+	// },
 
 };
 

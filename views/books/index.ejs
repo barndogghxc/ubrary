@@ -3,10 +3,10 @@
 <main>
 <a href="/books/new">Add Book!</a>
   <% books.forEach(book => { %>
+  <div class="list-group">
     <section class='book'>
-    <h2><%= book.title %></h2>
+    <h2 class="list-group-item-heading"><%= book.title %></h2>
     <a href='/books/<%= book.id%>'>Get More Info!</a>
-
     </section>
   <% }) %>
 </main>

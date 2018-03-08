@@ -5,8 +5,8 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
 const allRouter = require('./routes/allBooks');
-const readRouter = require('./routes/readBooks');
-const favsRouter = require('./routes/favsBooks');
+// const readRouter = require('./routes/readBooks');
+// const favsRouter = require('./routes/favsBooks');
 const port = process.env.PORT || 3001;
 // Init
 const app = express();
@@ -22,8 +22,8 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 // Middleware
 app.use('/books', allRouter);
-app.use('/favs', favsRouter);
-app.use('/read', readRouter);
+// app.use('/favs', favsRouter);
+// app.use('/read', readRouter);
 
 // Home
 app.get('/', (req, res) => {

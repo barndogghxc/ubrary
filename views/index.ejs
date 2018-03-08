@@ -1,18 +1,18 @@
 <% include ./partials/boilerplate.ejs %>
 
-<div>
+
+<div class="jumbotron">
   <h1><%= message %></h1>
   <h2><%= documentTitle %></h2>
   <h3><%= subTitle %></h3>
 </div>
 
-<div>
-<a href='/books'>See all books you want to read!</a>
+
+<div class="list-group">
+  <a href='/books' class="list-group-item">See all books you want to read!</a>
+  <a href='/favs'class="list-group-item">See your favorite books!</a>
+  <a href='/read'class="list-group-item">See books you already read!</a>
+  <a href="/reviews" class="list-group-item">See all your reviews!</a>
 </div>
-<div>
-<a href='/favs'>See your favorite books!</a>
-</div>
-<div>
-<a href='/read'>See books you already read!</a>
-</div>
+
 <% include ./partials/footer.ejs %>
