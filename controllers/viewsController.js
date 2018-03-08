@@ -27,13 +27,13 @@ module.exports = {
 	  res.redirect('/books');
 	},
 
-	showFavBooks (req, res) {
-     res.render('fav/index', {
+	showFavsBooks (req, res) {
+     res.render('favs/index', {
      	data: res.locals.fav,
      });
 	},
-	showOneFav (req, res) {
-	  res.render('fav/showFav', {
+	showOneFavs (req, res) {
+	  res.render('favs/showFavs', {
 	  	data: res.locals.fav,
 	  });
 	},

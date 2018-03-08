@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 
 const allRouter = require('./routes/allBooks');
 const readRouter = require('./routes/readBooks');
-const favRouter = require('./routes/favBooks');
-const port = process.env.PORT || 3000;
+const favsRouter = require('./routes/favsBooks');
+const port = process.env.PORT || 3001;
 // Init
 const app = express();
 // Views
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 // Middleware
 app.use('/books', allRouter);
-app.use('/favs', favRouter);
+app.use('/favs', favsRouter);
 app.use('/read', readRouter);
 
 // Home

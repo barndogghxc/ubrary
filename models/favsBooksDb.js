@@ -3,7 +3,7 @@ module.exports = {
 	findFavs () {
 		return db.any('SELECT * FROM favs');
 	},
-	findFavId (id) {
+	findFavsId (id) {
 		return db.one('SELECT * FROM favs WHERE id=$1', id)
 	}
 };
