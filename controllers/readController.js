@@ -3,7 +3,7 @@ const readBooksDB = require('../models/readBooksDB');
 module.exports = {
   readIndex (req, res, next) {
     readBooksDB.showReadBooks()
-    .then((reads) => {
+    .then((read) => {
       res.locals.read = read;
       next();
     })

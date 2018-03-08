@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 // Middleware
 app.use('/books', allRouter);
-app.use('/fav', favRouter);
+app.use('/favs', favRouter);
 app.use('/read', readRouter);
 
 // Home

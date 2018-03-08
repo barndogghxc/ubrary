@@ -28,8 +28,8 @@ module.exports = {
 	},
 
 	showFavBooks (req, res) {
-     res.render('fav/favIndex', {
-     	data: res.locals.favs,
+     res.render('fav/index', {
+     	data: res.locals.fav,
      });
 	},
 	showOneFav (req, res) {
@@ -37,21 +37,9 @@ module.exports = {
 	  	data: res.locals.fav,
 	  });
 	},
-	showEditFavBook (req, res) {
-	  res.render('fav/editFavBook', {
-	  	data: res.locals.fav,
-	  });
-	},
-	handleFavCreate(req, res) {
-      res.redirect('/fav');
-	},
-	handleFavUpdate(req, res) {
-	  res.redirect(`/fav/${req.params.id}`);
-	},
-
 	showReadBooks (req, res) {
-     res.render('read/readIndex', {
-     	data: res.locals.reads,
+     res.render('read/index', {
+     	data: res.locals.read,
      });
 	},
 	showReadOne (req, res) {
@@ -59,13 +47,6 @@ module.exports = {
 	  	data: res.locals.read,
 	  });
 	},
-	showEditReadBook (req, res) {
-	  res.render('read/editRead', {
-	  	data: res.locals.read,
-	  });
-	},
-	handleReadUpdate(req, res) {
-	  res.redirect(`/read/${req.params.id}`);
-	},
+
 };
 
