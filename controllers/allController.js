@@ -1,16 +1,14 @@
 const allBooksDB = require('../models/allBooksDB');
-const favBooksDB = require('../models/favBooksDB');
-const readBooksDB = require('../models/readBooksDB');
 
 module.exports = {
   
   makeNewBook(req, res, next) {
     const newBook = {
       id: null,
-      Title: null,
-      Author: null,
-      Average_Rating: null,
-      Number_of_Pages: null,
+      title: null,
+      author: null,
+      average_rating: null,
+      number_of_pages: null,
     };
     res.locals.book = newBook;
     next();
@@ -58,72 +56,6 @@ module.exports = {
       .then(() => next())
       .catch(err => next(err));
     },
-
-  favIndex (req, res, next) {
-    favBooksDB.findFavs()
-    .then((favs) => {
-      res.locals.favs = favs;
-      next();
-    })
-    .catch(err => next(err));
-  },
-    
-  getOneFav(req, res, next){
-    favBooksDB.findFavId(req.params.id)
-    .then((fav) => {
-      res.locals.fav = fav;
-      next();
-    })
-    .catch(err => next(err));
-  },
-
-  favCreate(req, res, next){
-    favBooksDB.saveFav(req.body)
-    .then((fav) => {
-      res.locals.fav = fav;
-      next();
-    })
-    .catch(err => next(err));
-  },
-
-
-  updateFav(req, res, next){
-    favBooksDB.updateFav(req.body)
-    .then((fav) => {
-        res.locals.fav = fav;
-        next();
-      })
-      .catch(err => next(err));
-  },
-
-  readIndex (req, res, next) {
-    readBooksDB.findAll()
-    .then((reads) => {
-      res.locals.reads = reads;
-      next();
-    })
-    .catch(err => next(err));
-  },
-    
-  getOneRead(req, res, next){
-    readBooksDB.findById(req.params.id)
-    .then((read) => {
-      res.locals.read = read;
-      next();
-    })
-    .catch(err => next(err));
-  },
-
-
-  updateRead(req, res, next){
-    readBooksDB.update(req.body)
-    .then((read) => {
-        res.locals.read = read;
-        next();
-      })
-      .catch(err => next(err));
-  },
 }; 
 
 
-// SELECT from books  

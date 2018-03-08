@@ -1,21 +1,19 @@
 const express = require('express');
 
-const allController = require('../controllers/allController');
+const readController = require('../controllers/readController');
 
 const viewsController = require('../controllers/viewsController');
 
-const allRouter = express.Router();
-
-allRouter.get('read/:id/edit',  allController.updateRead, viewsController.showEditReadBook);
+const readRouter = express.Router();
 
 
-allRouter.route('read/:id')
-  .get(allController.getOneRead, viewsController.shoReadOne)
-  .put(allController.updateRead, viewsController.handleReadUpdate)
+
+readRouter.route('/read/:id')
+  .get(readController.getOneRead, viewsController.showReadOne);
  
 
-allRouter.route('/read')
-  .get(allController.readIndex, viewsController.showReadBooks)
+readRouter.route('/read')
+  .get(readController.readIndex, viewsController.showReadBooks);
   
 
-module.exports = allRouter;
+module.exports = readRouter;

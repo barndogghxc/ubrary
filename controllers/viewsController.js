@@ -46,7 +46,7 @@ module.exports = {
       res.redirect('/fav');
 	},
 	handleFavUpdate(req, res) {
-	  res.redirect(`/favs/${req.params.id}`);
+	  res.redirect(`/fav/${req.params.id}`);
 	},
 
 	showReadBooks (req, res) {

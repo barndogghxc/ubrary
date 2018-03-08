@@ -203,7 +203,7 @@ INSERT INTO books (title, author, average_rating, number_of_pages) VALUES
 ('I Am Ozzy','Ozzy Osbourne',4.06,391),
 ('The Heroin Diaries: A Year In The Life Of A Shattered Rock Star','Nikki Sixx',4.12,413),
 ('Orange Is the New Black','Piper Kerman',3.7,298);
-INSERT INTO faves (title, author, average_rating, number_of_pages) VALUES
+INSERT INTO favs (title, author, average_rating, number_of_pages) VALUES
 ('The Magicians (The Magicians #1)','Lev Grossman',3.49,402),
 ('Nickel and Dimed: On (Not) Getting by in America','Barbara Ehrenreich',3.6,240),
 ('A People''s History of the United States','Howard Zinn',4.07,729),
@@ -408,7 +408,7 @@ INSERT INTO faves (title, author, average_rating, number_of_pages) VALUES
 ('Killing Yourself to Live: 85% of a True Story','Chuck Klosterman',3.85,245),
 ('Hammer of the Gods','Stephen Davis',3.83,408),
 ('Scar Tissue','Anthony Kiedis',4.1,465);
-INSERT INTO reads (title, author, average_rating, number_of_pages) VALUES
+INSERT INTO read (title, author, average_rating, number_of_pages) VALUES
 ('The Dirt: Confessions of the World''s Most Notorious Rock Band','Neil Strauss',4.16,431),
 ('Please Kill Me: The Uncensored Oral History of Punk','Legs McNeil',4.16,488),
 ('You''re Never Weird on the Internet (Almost)','Felicia Day',4.14,272),

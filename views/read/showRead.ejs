@@ -1,0 +1,15 @@
+<% include ../partials/boilerplate %>
+
+<div class='read'>
+  <h1>Title: <%= data.title %></h1>
+  <h2>Author: <%= data.author %></h2>
+  <p>Average Rating: <%= data.average_rating %></p>
+  <p>Number of Pages: <%= data.number_of_pages %></p>
+  <p><a href="/read/<%= data.id %>/edit"> Edit this read </a></p>
+  <form action="/read/<%= data.id %>?_method=Delete" method="Post">
+    <input type="Submit" value="Delete this read from your list?"/>
+  </form>
+  <a href='/read/'>See all books</a>
+</div>
+
+<% include ../partials/footer %>
