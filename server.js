@@ -1,7 +1,7 @@
 const express = require('express');
-
 const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
+const {Client} = require('pg').Client;
 require('dotenv').config();
 
 
@@ -26,10 +26,20 @@ app.get('/list', (req, res) => {
 	res.render('list');
 });
 
-app.get('/book-form', (req, res) => {
+app.get('/book/add', (req, res) => {
 	res.render('book-form');
 });
 
+app.post('/book/add', (req, res) => {
+
+	const client = new Client();
+	client.connect()
+	  .then(()=> {
+	  	const sql = 'INSERT INTO books(title, author, average_rating, number_of_pages) '
+	  	client.query('sql', 'params')
+	  });
+	res.redirect('/list');
+});
 
 
 // Error Handler
