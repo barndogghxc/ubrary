@@ -1,6 +1,6 @@
 const allBooksDB = require('../models/allBooksDB');
 const favBooksDB = require('../models/favBooksDB');
-const redBooksDB = require('../models/readBooksDB');
+const readBooksDB = require('../models/readBooksDB');
 
 module.exports = {
   
@@ -97,7 +97,7 @@ module.exports = {
   },
 
   readIndex (req, res, next) {
-    redBooksDB.findAll()
+    readBooksDB.findAll()
     .then((reads) => {
       res.locals.reads = reads;
       next();
@@ -106,7 +106,7 @@ module.exports = {
   },
     
   getOneRead(req, res, next){
-    redBooksDB.findById(req.params.id)
+    readBooksDB.findById(req.params.id)
     .then((read) => {
       res.locals.read = read;
       next();
@@ -116,7 +116,7 @@ module.exports = {
 
 
   updateRead(req, res, next){
-    redBooksDB.update(req.body)
+    readBooksDB.update(req.body)
     .then((read) => {
         res.locals.read = read;
         next();

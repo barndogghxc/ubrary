@@ -6,16 +6,16 @@ const viewsController = require('../controllers/viewsController');
 
 const favRouter = express.Router();
 
-favRouter.get('/:id/edit',  allController.getOne, viewsController.showEditBook);
-favRouter.get('/new',  allController.makeNewBook, viewsController.showNewBook);
+favRouter.get('/favs/:id/edit',  allController.getOneFav, viewsController.showEditFavBook);
 
-favRouter.route('/:id')
-  .get(allController.getOne, viewsController.showOne)
-  .put(allController.update, viewsController.handleUpdate)
-  .delete(allController.delete, viewsController.handleDelete);
 
-favRouter.route('/')
-  .get(allController.index, viewsController.showBooks)
-  .post(allController.create, viewsController.handleCreate);
+favRouter.route('/favs/:id')
+  .get(allController.getOneFav, viewsController.showOneFav)
+  .put(allController.updateFav, viewsController.handleFavUpdate)
+  
+
+favRouter.route('/favs')
+  .get(allController.favIndex, viewsController.showFavBooks)
+  .post(allController.favCreate, viewsController.handleFavCreate);
 
 module.exports = favRouter;

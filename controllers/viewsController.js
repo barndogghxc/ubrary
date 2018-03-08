@@ -28,39 +28,39 @@ module.exports = {
 	},
 
 	showFavBooks (req, res) {
-     res.render('favs/favIndex', {
+     res.render('fav/favIndex', {
      	data: res.locals.favs,
      });
 	},
 	showOneFav (req, res) {
-	  res.render('faves/showFav', {
+	  res.render('fav/showFav', {
 	  	data: res.locals.fav,
 	  });
 	},
 	showEditFavBook (req, res) {
-	  res.render('favs/editFavBook', {
+	  res.render('fav/editFavBook', {
 	  	data: res.locals.fav,
 	  });
 	},
 	handleFavCreate(req, res) {
-      res.redirect('/favs');
+      res.redirect('/fav');
 	},
 	handleFavUpdate(req, res) {
 	  res.redirect(`/favs/${req.params.id}`);
 	},
 
 	showReadBooks (req, res) {
-     res.render('reads/readIndex', {
+     res.render('read/readIndex', {
      	data: res.locals.reads,
      });
 	},
 	showReadOne (req, res) {
-	  res.render('reads/showRead', {
+	  res.render('read/showRead', {
 	  	data: res.locals.read,
 	  });
 	},
 	showEditReadBook (req, res) {
-	  res.render('reads/editRead', {
+	  res.render('read/editRead', {
 	  	data: res.locals.read,
 	  });
 	},

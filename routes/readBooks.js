@@ -6,16 +6,16 @@ const viewsController = require('../controllers/viewsController');
 
 const allRouter = express.Router();
 
-allRouter.get('/:id/edit',  allController.getOne, viewsController.showEditBook);
-allRouter.get('/new',  allController.makeNewBook, viewsController.showNewBook);
+allRouter.get('read/:id/edit',  allController.updateRead, viewsController.showEditReadBook);
 
-allRouter.route('/:id')
-  .get(allController.getOne, viewsController.showOne)
-  .put(allController.update, viewsController.handleUpdate)
-  .delete(allController.delete, viewsController.handleDelete);
 
-allRouter.route('/')
-  .get(allController.index, viewsController.showBooks)
-  .post(allController.create, viewsController.handleCreate);
+allRouter.route('read/:id')
+  .get(allController.getOneRead, viewsController.shoReadOne)
+  .put(allController.updateRead, viewsController.handleReadUpdate)
+ 
+
+allRouter.route('/read')
+  .get(allController.readIndex, viewsController.showReadBooks)
+  
 
 module.exports = allRouter;
